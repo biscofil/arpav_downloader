@@ -19,7 +19,7 @@ for filename in filenames:
 
     # https://www.arpa.veneto.it/bollettini/meteo/radar/imgs/mosaico/mosaico_202107131320_mpgrid_CZ_c_mbasemax_291966d8209f7cf3442d8aa90ec0f2_G.png
     image_url = "https://www.arpa.veneto.it/bollettini/meteo/radar/imgs/mosaico/" + filename
-    print(image_url)
+    # print(image_url)
 
 
      # Download the file if it does not exist
