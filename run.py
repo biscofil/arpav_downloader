@@ -11,7 +11,6 @@ response = requests.get(URL)
 
 print("Request has code {}".format(response.status_code))
 
-# two groups enclosed in separate ( and ) bracket
 filenames = re.findall(REGEX_URL, response.text)
 
 for filename in filenames:
@@ -31,10 +30,9 @@ for filename in filenames:
         print('Downloading ' + image_url + ' to ' + filename)
         try:
             urllib.request.urlretrieve(image_url, filename)
-            #pass
         except Exception as inst:
             print(inst)
-            print('  Encountered unknown error. Continuing.')
+            print(' > Encountered unknown error. Continuing.')
 
     else:
         print('Already downloaded: ' + filename)
