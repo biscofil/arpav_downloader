@@ -14,15 +14,12 @@ print("Request has code {}".format(response.status_code))
 filenames = re.findall(REGEX, response.text)
 
 for filename in filenames:
+    # filename = mosaico_202107131240_mpgrid_CZ_c_mbasemax_6510858a0270815072a151850238f3_G.png
 
-    # image_url = imgs/mosaico/mosaico_202107131240_mpgrid_CZ_c_mbasemax_6510858a0270815072a151850238f3_G.png
-
-    # https://www.arpa.veneto.it/bollettini/meteo/radar/imgs/mosaico/mosaico_202107131320_mpgrid_CZ_c_mbasemax_291966d8209f7cf3442d8aa90ec0f2_G.png
     image_url = "https://www.arpa.veneto.it/bollettini/meteo/radar/imgs/mosaico/" + filename
-    # print(image_url)
+    # image_url = https://www.arpa.veneto.it/bollettini/meteo/radar/imgs/mosaico/mosaico_202107131240_mpgrid_CZ_c_mbasemax_6510858a0270815072a151850238f3_G.png
 
-
-     # Download the file if it does not exist
+    # Download the file if it does not exist
     if not os.path.isfile(filename):
 
         print('Downloading: ' + filename)
