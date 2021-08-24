@@ -50,23 +50,16 @@ with open('dataset.csv', 'w', newline='') as csvfile:
                 # crop random square
                 img1 = img1[windowY:windowY + windowSize, windowX:windowX + windowSize]
 
-                # print(int(windowY + ((windowSize - 1) / 2)), int(windowX + ((windowSize - 1) / 2)))
+                # only consider center pixel
                 img2 = numpy.array(
                     img2[int(windowY + ((windowSize - 1) / 2)), int(windowX + ((windowSize - 1) / 2))]).reshape(
                     (1, 1, 3))
-                # print(img2)
 
                 # to tensor
                 img1 = windowToHueTensor(img1)
                 img2 = windowToHueTensor(img2)
 
-                # only consider center pixel
-                # print(len(img1))
-                # print(len(img2))
-
                 record = img1 + img2
-                print(record)
-
                 writer.writerow(record)
 
             except:
